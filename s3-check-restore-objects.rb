@@ -1,9 +1,9 @@
 require 'aws-sdk-core'
 
-Aws.config[:region] = 'region_name'
+Aws.config[:region] = 'ap-northeast-1'
 s3 = Aws::S3::Client.new
 
-resp = s3.list_objects(bucket: "bucket_name")
+resp = s3.list_objects(bucket: "enokawatest")
 
 hash = {}
 flag = false
@@ -25,4 +25,7 @@ hash.each do |value|
 	elsif value == "STANDARD" then
 		flag = false
 	else
+	end
+end
+
 end
